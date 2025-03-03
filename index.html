@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHOST - Premium Cloud Hosting Services</title>
+  <meta name="description" content="SCHOST - Premium cloud hosting and dedicated server solutions">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    // Add loading class to prevent scrollbar flash
+    document.documentElement.classList.add('loading');
+  </script>
+</head>
+<body class="bg-dark text-gray-100 font-sans loading">
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-dark">
+    <div class="flex flex-col items-center">
+      <div class="text-3xl font-bold text-primary-light">SCHOST</div>
+      <div class="mt-4 w-16 h-1 bg-gray-700 rounded-full overflow-hidden">
+        <div class="loading-bar h-full bg-primary w-0"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header - Completely transparent -->
+  <header class="fixed w-full top-0 z-40 transition-all duration-300 page-transition">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-primary animate-fade-in-left">
+          SCHOST
+        </a>
+        
+        <button id="mobile-menu-button" class="md:hidden text-white">
+          <i class="las la-bars text-2xl"></i>
+        </button>
+        
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#" class="text-gray-200 hover:text-primary-light transition-colors nav-link">Home</a>
+          <a href="#" class="text-gray-200 hover:text-primary-light transition-colors nav-link">About Us</a>
+          <a href="#" class="text-gray-200 hover:text-primary-light transition-colors nav-link">Contact Us</a>
+          <div class="relative group">
+            <a href="#pricing" class="text-gray-200 hover:text-primary-light transition-colors nav-link flex items-center">
+              Client Area
+              <i class="las la-angle-down ml-1 text-sm transition-transform group-hover:rotate-180"></i>
+            </a>
+            <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-dark-light border border-dark-border overflow-hidden transform scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-200 origin-top-left z-50">
+              <div class="py-1">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-medium hover:text-primary-light">Dashboard</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-medium hover:text-primary-light">My Services</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-medium hover:text-primary-light">Support Tickets</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-medium hover:text-primary-light">Billing</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Mobile menu with opaque background -->
+      <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 bg-dark-medium bg-opacity-95 backdrop-blur-sm rounded-lg p-4 border border-dark-border">
+        <div class="flex flex-col space-y-3">
+          <a href="#" class="text-gray-200 hover:text-primary-light transition-colors">Home</a>
+          <a href="#" class="text-gray-200 hover:text-primary-light transition-colors">About Us</a>
+          <a href="#" class="text-gray-200 hover:text-primary-light transition-colors">Contact Us</a>
+          
+          <!-- Mobile Client Area Dropdown -->
+          <div class="relative mobile-dropdown">
+            <button id="mobile-client-dropdown-btn" class="flex items-center justify-between w-full text-left text-gray-200 hover:text-primary-light transition-colors">
+              Client Area
+              <i class="las la-angle-down ml-1 text-sm transition-transform"></i>
+            </button>
+            <div id="mobile-client-dropdown" class="hidden mt-2 rounded-md bg-dark-light border border-dark-border overflow-hidden">
+              <div class="py-1">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark hover:text-primary-light">Dashboard</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark hover:text-primary-light">My Services</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark hover:text-primary-light">Support Tickets</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark hover:text-primary-light">Billing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden hero-section">
+    <!-- Grid background with much larger grid size and gradient overlay -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:120px_120px]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#7964e436,transparent_70%)]"></div>
+      <!-- Gradient that converges to features section color -->
+      <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent via-dark/80 to-dark section-transition"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-8">
+        <div class="lg:w-1/2 hero-content">
+          <div class="inline-block mb-2 font-bold text-white">
+            DEDICATED SERVERS <span class="text-primary-light">Up To 75% OFF</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Nicely Priced<br>Dedicated Servers</h1>
+          <p class="text-gray-300 mb-8 text-lg">
+            Powerful Bare Metal Servers at low prices, so you can do more for less.
+            Starting <a href="#" class="text-primary-light font-bold no-underline">$2.49 including</a>
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#pricing" class="btn-primary buy-now-btn">
+              <span>Buy Now</span>
+              <i class="las la-arrow-right ml-2 btn-icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center lg:justify-end">
+          <div class="relative float-animation">
+            <!-- Placeholder for hero image -->
+            <div class="flex items-center justify-center">
+              <img src="/schost-server-img.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section - Moved above pricing with enhanced animations -->
+  <section id="features" class="py-24 pb-40 bg-dark relative features-section">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 section-heading">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose SCHOST?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          We provide enterprise-grade infrastructure and support at affordable prices to help your business grow.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-dark-lighter p-6 rounded-lg border border-dark-border hover:border-primary/30 transition-all duration-300 feature-card feature-item">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 feature-icon">
+            <i class="las la-rocket text-primary-light text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">High Performance</h3>
+          <p class="text-gray-400">
+            Our servers are optimized for maximum performance with NVMe SSDs and high-speed networking.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-dark-lighter p-6 rounded-lg border border-dark-border hover:border-primary/30 transition-all duration-300 feature-card feature-item">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 feature-icon">
+            <i class="las la-shield-alt text-primary-light text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">DDoS Protection</h3>
+          <p class="text-gray-400">
+            Advanced DDoS protection included with all servers to keep your services online and secure.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-dark-lighter p-6 rounded-lg border border-dark-border hover:border-primary/30 transition-all duration-300 feature-card feature-item">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 feature-icon">
+            <i class="las la-server text-primary-light text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Dedicated Resources</h3>
+          <p class="text-gray-400">
+            No resource sharing - get full access to all CPU, RAM, and storage resources on your server.
+          </p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="bg-dark-lighter p-6 rounded-lg border border-dark-border hover:border-primary/30 transition-all duration-300 feature-card feature-item">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 feature-icon">
+            <i class="las la-headset text-primary-light text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">24/7 Support</h3>
+          <p class="text-gray-400">
+            Our expert support team is available around the clock to help with any issues or questions.
+          </p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="bg-dark-lighter p-6 rounded-lg border border-dark-border hover:border-primary/30 transition-all duration-300 feature-card feature-item">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 feature-icon">
+            <i class="las la-network-wired text-primary-light text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Global Network</h3>
+          <p class="text-gray-400">
+            Multiple data centers around the world with low-latency connections to major internet exchanges.
+          </p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="bg-dark-lighter p-6 rounded-lg border border-dark-border hover:border-primary/30 transition-all duration-300 feature-card feature-item">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 feature-icon">
+            <i class="las la-sync text-primary-light text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">99.9% Uptime</h3>
+          <p class="text-gray-400">
+            We guarantee 99.9% uptime for all our servers, backed by our service level agreement.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Improved transition to pricing section - no blur -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent via-dark/90 to-dark-lighter section-transition"></div>
+  </section>
+
+  <!-- Pricing Section - Mobile Optimized (moved below features) -->
+  <section id="pricing" class="py-16 pb-40 relative z-10 bg-dark-lighter pricing-section">
+    <div class="container mx-auto px-4">
+      <!-- Section heading for pricing -->
+      <div class="text-center mb-12 section-heading">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Our VPS Plans</h2>
+        <p class="text-gray-300 max-w-3xl mx-auto">
+          Choose the perfect server plan for your needs with our high-performance VPS options.
+        </p>
+      </div>
+      
+      <!-- Desktop pricing table (hidden on mobile) -->
+      <div class="hidden md:block pricing-table-container">
+        <table class="min-w-full divide-y divide-dark-border">
+          <tbody class="divide-y divide-dark-border">
+            <!-- Server 1 -->
+            <tr class="pricing-row">
+              <td class="py-6 px-4">
+                <div class="flex items-center gap-4">
+                  <!-- Placeholder for icon -->
+                  <div class="hidden xl:flex w-12 h-12 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center">
+                    <i class="las la-server text-primary-light text-2xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">Hyperslice VPS SG1</h3>
+                    <p class="text-sm text-gray-400 max-w-md">
+                      SCHOST is the strategic partner for your online journey. We are with you every step of the way.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4 text-center">
+                <div class="text-primary-light mb-4 font-bold text-xl">
+                  <span class="text-sm font-normal text-gray-300 block">Starting at:</span>
+                  $4/mo
+                </div>
+                <button class="btn-primary order-btn">
+                  <span>Order Now</span>
+                  <i class="las la-arrow-right ml-1 btn-icon"></i>
+                </button>
+              </td>
+            </tr>
+            
+            <!-- Server 2 -->
+            <tr class="pricing-row">
+              <td class="py-6 px-4">
+                <div class="flex items-center gap-4">
+                  <!-- Placeholder for icon -->
+                  <div class="hidden xl:flex w-12 h-12 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center">
+                    <i class="las la-server text-primary-light text-2xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">Hyperslice VPS SG2</h3>
+                    <p class="text-sm text-gray-400 max-w-md">
+                      SCHOST is the strategic partner for your online journey. We are with you every step of the way.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4 text-center">
+                <div class="text-primary-light mb-4 font-bold text-xl">
+                  <span class="text-sm font-normal text-gray-300 block">Starting at:</span>
+                  $6/mo
+                </div>
+                <button class="btn-primary order-btn">
+                  <span>Order Now</span>
+                  <i class="las la-arrow-right ml-1 btn-icon"></i>
+                </button>
+              </td>
+            </tr>
+            
+            <!-- Server 3 -->
+            <tr class="pricing-row">
+              <td class="py-6 px-4">
+                <div class="flex items-center gap-4">
+                  <!-- Placeholder for icon -->
+                  <div class="hidden xl:flex w-12 h-12 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center">
+                    <i class="las la-server text-primary-light text-2xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">Hyperslice VPS SG3</h3>
+                    <p class="text-sm text-gray-400 max-w-md">
+                      SCHOST is the strategic partner for your online journey. We are with you every step of the way.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4 text-center">
+                <div class="text-primary-light mb-4 font-bold text-xl">
+                  <span class="text-sm font-normal text-gray-300 block">Starting at:</span>
+                  $8/mo
+                </div>
+                <button class="btn-primary order-btn">
+                  <span>Order Now</span>
+                  <i class="las la-arrow-right ml-1 btn-icon"></i>
+                </button>
+              </td>
+            </tr>
+            
+            <!-- Server 4 -->
+            <tr class="pricing-row">
+              <td class="py-6 px-4">
+                <div class="flex items-center gap-4">
+                  <!-- Placeholder for icon -->
+                  <div class="hidden xl:flex w-12 h-12 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center">
+                    <i class="las la-server text-primary-light text-2xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">Hyperslice VPS SG4</h3>
+                    <p class="text-sm text-gray-400 max-w-md">
+                      SCHOST is the strategic partner for your online journey. We are with you every step of the way.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4">
+                <ul class="space-y-2">
+                  <li class="text-sm font-medium text-white">AMD Ryzen 9 7900</li>
+                  <li class="text-sm font-medium text-white">1 Dedicated IPs</li>
+                  <li class="text-sm font-medium text-white">256 GB RAM</li>
+                  <li class="text-sm font-medium text-white">2x 480 GB SSD Storage</li>
+                </ul>
+              </td>
+              <td class="py-6 px-4 text-center">
+                <div class="text-primary-light mb-4 font-bold text-xl">
+                  <span class="text-sm font-normal text-gray-300 block">Starting at:</span>
+                  $12/mo
+                </div>
+                <button class="btn-primary order-btn">
+                  <span>Order Now</span>
+                  <i class="las la-arrow-right ml-1 btn-icon"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Mobile pricing cards (visible only on mobile) -->
+      <div class="md:hidden space-y-6">
+        <!-- Server 1 Mobile Card -->
+        <div class="bg-dark-light rounded-lg overflow-hidden border border-dark-border pricing-card">
+          <div class="p-4 border-b border-dark-border">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center flex">
+                <i class="las la-server text-primary-light text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Hyperslice VPS SG1</h3>
+            </div>
+            <p class="text-sm text-gray-400 mt-2">
+              SCHOST is the strategic partner for your online journey.
+            </p>
+          </div>
+          
+          <div class="p-4 grid grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">CPU</h4>
+              <p class="text-sm font-medium text-white">AMD Ryzen 9 7900</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">IP</h4>
+              <p class="text-sm font-medium text-white">1 Dedicated IP</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">RAM</h4>
+              <p class="text-sm font-medium text-white">256 GB RAM</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Storage</h4>
+              <p class="text-sm font-medium text-white">2x 480 GB SSD</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Network</h4>
+              <p class="text-sm font-medium text-white">1 Gbps Port</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Bandwidth</h4>
+              <p class="text-sm font-medium text-white">Unlimited</p>
+            </div>
+          </div>
+          
+          <div class="p-4 bg-dark-medium flex items-center justify-between">
+            <div class="text-primary-light font-bold text-xl">
+              <span class="text-xs font-normal text-gray-400 block">Starting at:</span>
+              $4/mo
+            </div>
+            <button class="btn-primary btn-sm order-btn">
+              <span>Order</span>
+              <i class="las la-arrow-right ml-1 btn-icon"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Server 2 Mobile Card -->
+        <div class="bg-dark-light rounded-lg overflow-hidden border border-dark-border pricing-card">
+          <div class="p-4 border-b border-dark-border">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center flex">
+                <i class="las la-server text-primary-light text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Hyperslice VPS SG2</h3>
+            </div>
+            <p class="text-sm text-gray-400 mt-2">
+              SCHOST is the strategic partner for your online journey.
+            </p>
+          </div>
+          
+          <div class="p-4 grid grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">CPU</h4>
+              <p class="text-sm font-medium text-white">AMD Ryzen 9 7900</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">IP</h4>
+              <p class="text-sm font-medium text-white">1 Dedicated IP</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">RAM</h4>
+              <p class="text-sm font-medium text-white">256 GB RAM</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Storage</h4>
+              <p class="text-sm font-medium text-white">2x 480 GB SSD</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Network</h4>
+              <p class="text-sm font-medium text-white">1 Gbps Port</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Bandwidth</h4>
+              <p class="text-sm font-medium text-white">Unlimited</p>
+            </div>
+          </div>
+          
+          <div class="p-4 bg-dark-medium flex items-center justify-between">
+            <div class="text-primary-light font-bold text-xl">
+              <span class="text-xs font-normal text-gray-400 block">Starting at:</span>
+              $6/mo
+            </div>
+            <button class="btn-primary btn-sm order-btn">
+              <span>Order</span>
+              <i class="las la-arrow-right ml-1 btn-icon"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Server 3 Mobile Card -->
+        <div class="bg-dark-light rounded-lg overflow-hidden border border-dark-border pricing-card">
+          <div class="p-4 border-b border-dark-border">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center flex">
+                <i class="las la-server text-primary-light text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Hyperslice VPS SG3</h3>
+            </div>
+            <p class="text-sm text-gray-400 mt-2">
+              SCHOST is the strategic partner for your online journey.
+            </p>
+          </div>
+          
+          <div class="p-4 grid grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">CPU</h4>
+              <p class="text-sm font-medium text-white">AMD Ryzen 9 7900</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">IP</h4>
+              <p class="text-sm font-medium text-white">1 Dedicated IP</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">RAM</h4>
+              <p class="text-sm font-medium text-white">256 GB RAM</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Storage</h4>
+              <p class="text-sm font-medium text-white">2x 480 GB SSD</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Network</h4>
+              <p class="text-sm font-medium text-white">1 Gbps Port</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Bandwidth</h4>
+              <p class="text-sm font-medium text-white">Unlimited</p>
+            </div>
+          </div>
+          
+          <div class="p-4 bg-dark-medium flex items-center justify-between">
+            <div class="text-primary-light font-bold text-xl">
+              <span class="text-xs font-normal text-gray-400 block">Starting at:</span>
+              $8/mo
+            </div>
+            <button class="btn-primary btn-sm order-btn">
+              <span>Order</span>
+              <i class="las la-arrow-right ml-1 btn-icon"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Server 4 Mobile Card -->
+        <div class="bg-dark-light rounded-lg overflow-hidden border border-dark-border pricing-card">
+          <div class="p-4 border-b border-dark-border">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary/20 rounded-full flex-shrink-0 items-center justify-center flex">
+                <i class="las la-server text-primary-light text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Hyperslice VPS SG4</h3>
+            </div>
+            <p class="text-sm text-gray-400 mt-2">
+              SCHOST is the strategic partner for your online journey.
+            </p>
+          </div>
+          
+          <div class="p-4 grid grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">CPU</h4>
+              <p class="text-sm font-medium text-white">AMD Ryzen 9 7900</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">IP</h4>
+              <p class="text-sm font-medium text-white">1 Dedicated IP</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">RAM</h4>
+              <p class="text-sm font-medium text-white">256 GB RAM</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Storage</h4>
+              <p class="text-sm font-medium text-white">2x 480 GB SSD</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Network</h4>
+              <p class="text-sm font-medium text-white">1 Gbps Port</p>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase text-gray-500 mb-1">Bandwidth</h4>
+              <p class="text-sm font-medium text-white">Unlimited</p>
+            </div>
+          </div>
+          
+          <div class="p-4 bg-dark-medium flex items-center justify-between">
+            <div class="text-primary-light font-bold text-xl">
+              <span class="text-xs font-normal text-gray-400 block">Starting at:</span>
+              $12/mo
+            </div>
+            <button class="btn-primary btn-sm order-btn">
+              <span>Order</span>
+              <i class="las la-arrow-right ml-1 btn-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Clean transition to FAQ section - no blur -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-dark section-transition"></div>
+  </section>
+
+  <!-- FAQ Section - Updated with new accordion style -->
+  <section class="py-16 md:py-24 pb-40 bg-dark relative faq-section">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 section-heading">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Dedicated Server FAQs</h2>
+        <p class="text-gray-300 max-w-3xl mx-auto">
+          Get answers to commonly asked questions about our dedicated server offerings.
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <!-- FAQ Item 1 -->
+        <div class="mb-4 faq-item">
+          <label for="faq1" class="relative flex flex-col rounded-lg border border-dark-border overflow-hidden bg-dark-light">
+            <input class="peer hidden" type="checkbox" id="faq1" checked />
+            <div class="relative cursor-pointer select-none p-4 flex justify-between items-center">
+              <h3 class="font-semibold text-lg text-white">What is Shared hosting?</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 transition-transform duration-300 peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div class="p-4 border-t border-dark-border">
+                <p class="text-gray-300">
+                  We care about safety big time — and so do your site's visitors. With a Shared Hosting account, you get an SSL certificate for free to add to your site. In this day and age, having an SSL for your site is a no-brainer best practice. Not only does an SSL help your visitors feel safe interacting with your site — this is particularly important if you run an e-commerce site.
+                </p>
+              </div>
+            </div>
+          </label>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="mb-4 faq-item">
+          <label for="faq2" class="relative flex flex-col rounded-lg border border-dark-border overflow-hidden bg-dark-light">
+            <input class="peer hidden" type="checkbox" id="faq2" />
+            <div class="relative cursor-pointer select-none p-4 flex justify-between items-center">
+              <h3 class="font-semibold text-lg text-white">How many websites can I host?</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 transition-transform duration-300 peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div class="p-4 border-t border-dark-border">
+                <p class="text-gray-300">
+                  With our dedicated servers, you can host unlimited websites depending on your server resources. Each plan comes with different specifications that determine how many high-traffic websites you can efficiently run. Our entry-level plans can comfortably host 10-15 medium-traffic websites, while our premium plans can handle 50+ high-traffic websites with ease.
+                </p>
+              </div>
+            </div>
+          </label>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="mb-4 faq-item">
+          <label for="faq3" class="relative flex flex-col rounded-lg border border-dark-border overflow-hidden bg-dark-light">
+            <input class="peer hidden" type="checkbox" id="faq3" />
+            <div class="relative cursor-pointer select-none p-4 flex justify-between items-center">
+              <h3 class="font-semibold text-lg text-white">Do you include SSL Certificates?</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 transition-transform duration-300 peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div class="p-4 border-t border-dark-border">
+                <p class="text-gray-300">
+                  Yes, all our hosting plans include free SSL certificates through Let's Encrypt. These certificates are automatically renewed and help secure your website by encrypting data transferred between your site and its visitors. For businesses requiring extended validation or wildcard certificates, we offer premium SSL options at competitive rates.
+                </p>
+              </div>
+            </div>
+          </label>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="mb-4 faq-item">
+          <label for="faq4" class="relative flex flex-col rounded-lg border border-dark-border overflow-hidden bg-dark-light">
+            <input class="peer hidden" type="checkbox" id="faq4" />
+            <div class="relative cursor-pointer select-none p-4 flex justify-between items-center">
+              <h3 class="font-semibold text-lg text-white">How to manage Redirects in cPanel?</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 transition-transform duration-300 peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div class="p-4 border-t border-dark-border">
+                <p class="text-gray-300">
+                  Managing redirects in cPanel is simple. Log into your cPanel account, locate the "Domains" section, and click on "Redirects." From there, you can select the domain you want to redirect, choose the redirect type (permanent 301 or temporary 302), and specify the destination URL. This feature is useful for directing traffic from old pages to new ones or for creating custom short URLs.
+                </p>
+              </div>
+            </div>
+          </label>
+        </div>
+        
+        <!-- FAQ Item 5 -->
+        <div class="mb-4 faq-item">
+          <label for="faq5" class="relative flex flex-col rounded-lg border border-dark-border overflow-hidden bg-dark-light">
+            <input class="peer hidden" type="checkbox" id="faq5" />
+            <div class="relative cursor-pointer select-none p-4 flex justify-between items-center">
+              <h3 class="font-semibold text-lg text-white">How to use the Track Delivery feature in the cPanel?</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 transition-transform duration-300 peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div class="p-4 border-t border-dark-border">
+                <p class="text-gray-300">
+                  The Track Delivery feature in cPanel allows you to monitor email deliverability. To use it, log into cPanel, navigate to the "Email" section, and click on "Track Delivery." Here, you can view detailed reports about sent emails, including delivery status, open rates, and bounce information. This tool is invaluable for ensuring your important emails reach their intended recipients and for troubleshooting any delivery issues.
+                </p>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- No transition to footer - completely removed blur -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-16 pb-6 bg-dark-lighter border-t border-dark-border footer-section">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <!-- Column 1 -->
+        <div>
+          <div class="text-2xl font-bold text-primary mb-4">SCHOST</div>
+          <p class="text-gray-400 mb-6">
+            Whether you run an e-commerce site or a web business, you want to attract as many visitors as possible. Our servers provide the performance you need.
+          </p>
+          <h6 class="text-white mb-4 font-semibold">Social Media</h6>
+          <div class="flex gap-2">
+            <a href="#" class="social-icon">
+              <i class="lab la-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="lab la-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="lab la-dribbble"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="lab la-behance"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Column 2 -->
+        <div>
+          <h6 class="text-white font-semibold mb-6">Product & Solutions</h6>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link">Shared Hosting</a></li>
+            <li><a href="#" class="footer-link">WordPress Hosting</a></li>
+            <li><a href="#" class="footer-link">VPS Hosting</a></li>
+            <li><a href="#" class="footer-link">Cloud Servers</a></li>
+            <li><a href="#" class="footer-link">Dedicated Servers</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 3 -->
+        <div>
+          <h6 class="text-white font-semibold mb-6">SCHOST Features</h6>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link">Data Center</a></li>
+            <li><a href="#" class="footer-link">Control Panel</a></li>
+            <li><a href="#" class="footer-link">Operating System</a></li>
+            <li><a href="#" class="footer-link">Uptime Guarantee</a></li>
+            <li><a href="#" class="footer-link">DDOS Protection</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 4 -->
+        <div>
+          <h6 class="text-white font-semibold mb-6">Company Info</h6>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Partners</a></li>
+            <li><a href="#" class="footer-link">Knowledgebase</a></li>
+            <li><a href="#" class="footer-link">Contact Us</a></li>
+            <li><a href="#" class="footer-link">News</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-6 border-t border-dark-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-400 text-sm">&copy; 2024 SCHOST. All rights reserved</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-primary-light transition-colors text-sm">Terms & Condition</a>
+          <a href="#" class="text-gray-400 hover:text-primary-light transition-colors text-sm">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+    <i class="las la-arrow-up"></i>
+  </button>
+
+  <script src="/main.js"></script>
+  <script>
+    // Remove loading class after content is loaded
+    window.addEventListener('load', function() {
+      // Force remove loading class after a maximum timeout (failsafe)
+      setTimeout(() => {
+        document.documentElement.classList.remove('loading');
+        document.body.classList.remove('loading');
+        
+        // Force hide preloader if it's still visible
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.style.opacity = '0';
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 300);
+        }
+      }, 1000);
+    });
+
+    // Backup solution: If for some reason the load event doesn't fire properly
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        if (document.documentElement.classList.contains('loading')) {
+          console.log('Forcing preloader removal via DOMContentLoaded');
+          document.documentElement.classList.remove('loading');
+          document.body.classList.remove('loading');
+          
+          const preloader = document.getElementById('preloader');
+          if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 300);
+          }
+        }
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
