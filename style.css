@@ -429,3 +429,18 @@ header.scrolled {
   opacity: 0;
   animation: fadeIn 0.8s ease-out 1s forwards;
 }
+
+/* few chnges to button */
+.pricing-table-container table {
+  table-layout: fixed; /* Prevents column width from changing */
+}
+
+.btn-primary.order-btn {
+  min-width: 120px; /* Ensures minimum button width */
+  transform: translateZ(0); /* Prevents layout shift in some browsers */
+  backface-visibility: hidden; /* Helps prevent shifting */
+}
+
+td {
+  vertical-align: top; /* Keeps content aligned at the top */
+}
